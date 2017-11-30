@@ -24,6 +24,7 @@ CREATE TABLE Group_Link (
   FOREIGN KEY (group_id) REFERENCES Contact_Group(group_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+# Insert seed-data into tables
 INSERT INTO Contact(name, email, phone_number) VALUES ("Julian", "julian@gmail.com", "0211234567"), ("Maryanne", "maryanne@gmail.com", "0212345678"), ("Michael","michael@gmail.com", "0213456789");
 
 INSERT INTO Contact_Group(group_name) VALUES ("Family"), ("Friends"), ("Work");
