@@ -29,4 +29,4 @@ INSERT INTO Contact(name, email, phone_number) VALUES ("Julian", "julian@gmail.c
 
 INSERT INTO Contact_Group(group_name) VALUES ("Family"), ("Friends"), ("Work");
 
-INSERT INTO Group_Link(contact_id, group_id) VALUES (11, 11), (21, 21);
+INSERT INTO Group_Link(contact_id, group_id) VALUES (11, 1) , (11, 11), (21, 21);
