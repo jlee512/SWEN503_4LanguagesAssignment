@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 /**
@@ -8,11 +9,64 @@ public class Contact_UI {
     public static ArrayList<Contact> contacts_in_focus = new ArrayList<>();
 
     public static void main(String[] args) {
+        boolean session = true;
         //Present welcome screen and initial list of all contacts available
-        System.out.println("*******************************************");
-        System.out.println("\t Welcome to your contacts viewer \t");
-        System.out.println("*******************************************");
+        initialScreen();
 
+        while (session) {
+            int selection = topMenuSelection();
+
+            switch (selection) {
+                case 1:
+                    // Add a contact
+                    String contact_name = addContactToList();
+                    if (contact_name != null) {
+                        System.out.println("--------------------------------------------------");
+                        System.out.println("Thanks, " + contact_name + " has been added successfully");
+                        System.out.println("--------------------------------------------------");
+                        System.out.println();
+                    } else {
+                        System.out.println("Sorry we weren't able to add your contact to the list, please try again");
+                        System.out.println();
+                    }
+                    break;
+                case 2:
+                    // Remove a contact
+                    String removed_contact_name = removeAContact();
+                    if (removed_contact_name != null) {
+                        System.out.println("--------------------------------------------------");
+                        System.out.println("Thanks, " + removed_contact_name + " has been removed");
+                        System.out.println("--------------------------------------------------");
+                        System.out.println();
+                    } else {
+                        System.out.println("Sorry we weren't able to remove your contact from the list, please try again");
+                        System.out.println();
+                    }
+                    break;
+                case 3:
+                    // Update a contact
+
+                    break;
+                case 4:
+                    // Search for a contact
+
+                    break;
+                case 5:
+                    //Quit
+                    System.out.println("Thanks for using the contacts viewer");
+                    return;
+                case 6:
+                    System.out.println("You have not entered a number corresponding to a menu item, please try again");
+                    continue;
+                case 7:
+                    System.out.println("You have not entered a number within the list of menu items (1 to 5), please try again");
+                    continue;
+            }
+
+        }
+    }
+
+    public static ArrayList<Contact> printAllContacts() {
         contacts_in_focus = Contacts_DAO.getAll();
 
         if (contacts_in_focus != null) {
@@ -22,12 +76,158 @@ public class Contact_UI {
                 Contact contact = contacts_in_focus.get(i);
                 System.out.print("" + (i + 1) + ") ");
                 contact.printToConsole();
-                System.out.println();
             }
         } else {
             System.out.println("Looks like you haven't added any contacts yet...");
-            System.out.println("To add some contacts please type '+' and hit enter");
         }
 
+        return contacts_in_focus;
+    }
+
+    public static void initialScreen() {
+
+        System.out.println("*******************************************");
+        System.out.println("\t Welcome to your contacts viewer \t");
+        System.out.println("*******************************************");
+
+        printAllContacts();
+
+    }
+
+    public static int topMenuSelection() {
+
+        int selection = -1;
+
+        System.out.println("-------------------------------------------");
+        System.out.println("\t What would you like to do? \t");
+        System.out.println("-------------------------------------------");
+
+        System.out.println("\t 1) Add a new contact \t");
+        System.out.println("\t 2) Delete a contact \t");
+        System.out.println("\t 3) Update a contact \t");
+        System.out.println("\t 4) Search your contacts list \t");
+        System.out.println("\t 5) Quit \t");
+        System.out.println("\t Please type the number of your selection and hit ENTER \t");
+        System.out.print("\t");
+
+        String input = Keyboard.readInput();
+
+        //Process the user's menu selection -> if less than 6 (and above 0), a menu item has been selected, otherwise return error messaging codes 6 (invalid input e.g. string) or 7 (invalid integer option)
+        try {
+            selection = Integer.parseInt(input);
+            if (selection < 6 && selection > 0) {
+                return selection;
+            } else {
+                return 7;
+            }
+        } catch (NumberFormatException e) {
+            return 6;
+        }
+    }
+
+    public static String removeAContact() {
+
+        System.out.println("-------------------------------------------");
+        System.out.println("\t Remove a contact \t");
+        System.out.println("-------------------------------------------");
+
+        ArrayList<Contact> contacts = printAllContacts();
+
+        System.out.println("\t Please enter the number of the contact you would like to remove at hit ENTER \t");
+        System.out.print("\t");
+
+        String input = Keyboard.readInput();
+        int selection;
+
+        try {
+            selection = Integer.parseInt(input);
+            if (selection <= contacts.size() && selection > 0) {
+                String removed_name = Contacts_DAO.removeAContact(contacts.get(selection - 1));
+                return removed_name;
+            } else {
+                return null;
+            }
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
+    public static String addContactToList() {
+
+        String name = "";
+        boolean name_check = false;
+        String email;
+        String phone_number;
+        String group_to_add = "";
+        ArrayList<String> groups = new ArrayList<>();
+        boolean groups_finished = false;
+
+        System.out.println("-------------------------------------------");
+        System.out.println("\t Add a contact \t");
+        System.out.println("-------------------------------------------");
+
+        //Get name input
+        while (!name_check) {
+            System.out.println("\t Please enter a contact name and hit ENTER \t");
+            try {
+                System.out.print("\t");
+                name = Keyboard.readInput();
+                if (name.length() == 0) {
+                    throw new InvalidInputException("name length is zero");
+                } else {
+                    name_check = true;
+                }
+            } catch (InvalidInputException e) {
+                System.out.println("\t No contact name entered, please try again \t");
+            }
+        }
+
+        //Get email input
+        System.out.println("\t Please enter a contact email and hit ENTER \t");
+        System.out.println("\t [To leave email empty, just hit ENTER] \t");
+        System.out.print("\t");
+        email = Keyboard.readInput();
+
+        //Get phone number input
+        System.out.println("\t Please enter a contact phone_number and hit ENTER \t");
+        System.out.println("\t [To leave phone_number empty, just hit ENTER] \t");
+        System.out.print("\t");
+        phone_number = Keyboard.readInput();
+
+        //Get groups input
+        while (!groups_finished) {
+            System.out.println("\t Please enter a group name and hit ENTER \t");
+            try {
+                System.out.print("\t");
+                group_to_add = Keyboard.readInput();
+                if (group_to_add.length() == 0) {
+                    throw new InvalidInputException("name length is zero");
+                } else {
+                    groups.add(group_to_add);
+                    System.out.println("\t Group added successfully \t");
+                    System.out.println("\t To add another group, type '1' and hit ENTER, otherwise hit ENTER");
+                    System.out.print("\t");
+                    String add_more = Keyboard.readInput();
+
+                    if (add_more.equals("1")) {
+                        groups_finished = false;
+                    } else {
+                        groups_finished = true;
+                    }
+                }
+            } catch (InvalidInputException e) {
+                System.out.println("\t No group name entered, please try again \t");
+            }
+        }
+
+        Contact contact = new Contact(name, phone_number, email);
+        contact.setGroups(groups);
+        boolean add_status = Contacts_DAO.addContact(contact);
+
+        if (add_status) {
+            return name;
+        } else {
+            return "";
+        }
     }
 }

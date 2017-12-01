@@ -13,7 +13,7 @@ CREATE TABLE Contact (
 
 CREATE TABLE Contact_Group (
   group_id INT PRIMARY KEY AUTO_INCREMENT,
-  group_name VARCHAR(150)
+  group_name VARCHAR(150) UNIQUE
 );
 
 CREATE TABLE Group_Link (
@@ -27,9 +27,9 @@ CREATE TABLE Group_Link (
 # Insert seed-data into tables
 INSERT INTO Contact(name, email, phone_number) VALUES ("Julian", "julian@gmail.com", "0211234567"), ("Maryanne", "maryanne@gmail.com", "0212345678"), ("Michael","michael@gmail.com", "0213456789");
 
-INSERT INTO Contact_Group(group_name) VALUES ("Family"), ("Friends"), ("Work");
+INSERT INTO Contact_Group(group_name) VALUES ("Family"), ("Friends"), ("Work"), ("MISC");
 
-INSERT INTO Group_Link(contact_id, group_id) VALUES (11, 1) , (11, 11), (21, 21);
+INSERT INTO Group_Link(contact_id, group_id) VALUES (1, 31), (11, 1) , (11, 11), (21, 21);
 
 # Test queries
 SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id;

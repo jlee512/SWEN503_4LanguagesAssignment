@@ -39,6 +39,34 @@ public class Contact {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public ArrayList<String> getGroups() {
+        return groups;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setGroups(ArrayList<String> groups) {
         this.groups = groups;
     }
