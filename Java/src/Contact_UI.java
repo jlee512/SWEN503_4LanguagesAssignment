@@ -1,4 +1,6 @@
 
+import com.mysql.fabric.xmlrpc.base.Array;
+
 import java.util.ArrayList;
 
 /**
@@ -7,6 +9,7 @@ import java.util.ArrayList;
 public class Contact_UI {
 
     public static ArrayList<Contact> contacts_in_focus = new ArrayList<>();
+    public static ArrayList<Contact> searchedContacts = new ArrayList<>();
 
     public static void main(String[] args) {
         boolean session = true;
@@ -49,16 +52,20 @@ public class Contact_UI {
                     break;
                 case 4:
                     // Search for a contact
-
+                    searchAContactByName();
                     break;
                 case 5:
+                    //Print all contacts
+                    printAllContacts();
+                    break;
+                case 6:
                     //Quit
                     System.out.println("Thanks for using the contacts viewer");
                     return;
-                case 6:
+                case 7:
                     System.out.println("You have not entered a number corresponding to a menu item, please try again");
                     continue;
-                case 7:
+                case 8:
                     System.out.println("You have not entered a number within the list of menu items (1 to 5), please try again");
                     continue;
             }
@@ -84,6 +91,25 @@ public class Contact_UI {
         return contacts_in_focus;
     }
 
+    public static ArrayList<Contact> printSearchResults(String name) {
+        searchedContacts = Contacts_DAO.searchByName(name);
+
+        if (searchedContacts != null) {
+            System.out.println("Contacts: ");
+            System.out.println("--------");
+            for (int i = 0; i < searchedContacts.size(); i++) {
+                Contact contact = searchedContacts.get(i);
+                System.out.print("" + (i + 1) + ") ");
+                contact.printToConsole();
+            }
+        } else {
+            System.out.println("Sorry we couldn't find any contacts with that name");
+            System.out.println("Please try different spelling or view all contacts at the main menu");
+        }
+
+        return searchedContacts;
+    }
+
     public static void initialScreen() {
 
         System.out.println("*******************************************");
@@ -105,8 +131,9 @@ public class Contact_UI {
         System.out.println("\t 1) Add a new contact \t");
         System.out.println("\t 2) Delete a contact \t");
         System.out.println("\t 3) Update a contact \t");
-        System.out.println("\t 4) Search your contacts list \t");
-        System.out.println("\t 5) Quit \t");
+        System.out.println("\t 4) Search your contacts list by name \t");
+        System.out.println("\t 5) View all contacts \t");
+        System.out.println("\t 6) Quit \t");
         System.out.println("\t Please type the number of your selection and hit ENTER \t");
         System.out.print("\t");
 
@@ -115,13 +142,33 @@ public class Contact_UI {
         //Process the user's menu selection -> if less than 6 (and above 0), a menu item has been selected, otherwise return error messaging codes 6 (invalid input e.g. string) or 7 (invalid integer option)
         try {
             selection = Integer.parseInt(input);
-            if (selection < 6 && selection > 0) {
+            if (selection < 7 && selection > 0) {
                 return selection;
             } else {
-                return 7;
+                return 8;
             }
         } catch (NumberFormatException e) {
-            return 6;
+            return 7;
+        }
+    }
+
+    public static boolean searchAContactByName() {
+
+        System.out.println("-------------------------------------------");
+        System.out.println("\t Search for a contact by name \t");
+        System.out.println("-------------------------------------------");
+
+        System.out.println("\t Please enter the name of the contact you would like to search for and hit ENTER \t");
+        System.out.print("\t");
+
+        String input = Keyboard.readInput();
+
+        ArrayList<Contact> searchResults = printSearchResults(input);
+
+        if (searchResults != null) {
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -133,7 +180,7 @@ public class Contact_UI {
 
         ArrayList<Contact> contacts = printAllContacts();
 
-        System.out.println("\t Please enter the number of the contact you would like to remove at hit ENTER \t");
+        System.out.println("\t Please enter the number of the contact you would like to remove and hit ENTER \t");
         System.out.print("\t");
 
         String input = Keyboard.readInput();

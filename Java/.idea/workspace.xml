@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2bdd8-a1bc-4907-862f-2d7e367f541f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InvalidInputException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Keyboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8ee15633-2d7a-4aab-ae97-83e2e18cb196.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8ee15633-2d7a-4aab-ae97-83e2e18cb196.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Contact.java" afterPath="$PROJECT_DIR$/src/Contact.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Contact_UI.java" afterPath="$PROJECT_DIR$/src/Contact_UI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Contacts_DAO.java" afterPath="$PROJECT_DIR$/src/Contacts_DAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.sql" afterPath="$PROJECT_DIR$/test.sql" />
@@ -95,33 +91,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="Contact_UI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Contact_UI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Contact_UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6864">
-              <caret line="208" column="40" lean-forward="false" selection-start-line="208" selection-start-column="40" selection-end-line="208" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="535">
+              <caret line="59" column="26" lean-forward="false" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Contacts_DAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Contacts_DAO.java">
+      <file leaf-file-name="test.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-708">
-              <caret line="150" column="37" lean-forward="false" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1512091508132" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
-                <marker date="1512091508132" expanded="true" signature="3574:3718" ph="SELECT c.*, contact" />
-                <marker date="1512091508132" expanded="true" signature="3574:3733" ph="SELECT c.*, contact" />
-                <marker date="1512091508132" expanded="true" signature="6334:6368" ph="DELETE FROM " />
-                <marker date="1512091508132" expanded="true" signature="7036:7091" ph="INSERT IGNOR... contact_group" />
-                <marker date="1512091508132" expanded="true" signature="7478:7549" ph="INSERT IGNOR... contact_group" />
-                <marker date="1512091508132" expanded="true" signature="8039:8206" ph="INSERT IGNOR... group_link" />
-                <marker date="1512091508132" expanded="true" signature="8100:8145" ph="SELECT conta... contact" />
-                <marker date="1512091508132" expanded="true" signature="8149:8204" ph="SELECT group... contact_group" />
-              </folding>
+            <state relative-caret-position="838">
+              <caret line="36" column="155" lean-forward="false" selection-start-line="36" selection-start-column="155" selection-end-line="36" selection-end-column="155" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,6 +126,7 @@
     <findStrings>
       <find>name</find>
       <find>*</find>
+      <find>at hit</find>
     </findStrings>
     <replaceStrings>
       <replace>-</replace>
@@ -164,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/Keyboard.java" />
         <option value="$PROJECT_DIR$/src/InvalidInputException.java" />
         <option value="$PROJECT_DIR$/test.sql" />
-        <option value="$PROJECT_DIR$/src/Contact_UI.java" />
         <option value="$PROJECT_DIR$/src/Contacts_DAO.java" />
+        <option value="$PROJECT_DIR$/src/Contact_UI.java" />
       </list>
     </option>
   </component>
@@ -704,7 +692,7 @@
       <workItem from="1512008622768" duration="6501000" />
       <workItem from="1512031666725" duration="79000" />
       <workItem from="1512070384942" duration="15438000" />
-      <workItem from="1512167858354" duration="21000" />
+      <workItem from="1512167858354" duration="3420000" />
     </task>
     <task id="LOCAL-00001" summary="Fleshing out method stubs and object oriented design">
       <created>1512010914416</created>
@@ -727,46 +715,53 @@
       <option name="project" value="LOCAL" />
       <updated>1512016364550</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Can add/remove contacts. Last implementations required for searching and updating">
+      <created>1512167998689</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1512167998689</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25300000" />
+    <option name="totallyTimeSpent" value="28699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33866194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13907968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18578297" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978094" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33866194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13907968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978094" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -816,10 +811,13 @@
     <MESSAGE value="Fleshing out method stubs and object oriented design" />
     <MESSAGE value="Fleshing out method stubs and object oriented design - trying to start initial contact viewer design in Java. Plan is to progress to C# and then look into Python followed by a more complex language such as Haskell or Bash" />
     <MESSAGE value="Now able to display all contacts and welcome screen. Next step is developing ContactDAO methods to facilitate core features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now able to display all contacts and welcome screen. Next step is developing ContactDAO methods to facilitate core features" />
+    <MESSAGE value="Can add/remove contacts. Last implementations required for searching and updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can add/remove contacts. Last implementations required for searching and updating" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -831,7 +829,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6864">
           <caret line="208" column="40" lean-forward="false" selection-start-line="208" selection-start-column="40" selection-end-line="208" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -841,15 +841,16 @@
           <caret line="150" column="37" lean-forward="false" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512091508132" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="3574:3718" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="3574:3733" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="6334:6368" ph="DELETE FROM " />
-            <marker date="1512091508132" expanded="true" signature="7036:7091" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512091508132" expanded="true" signature="7478:7549" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512091508132" expanded="true" signature="8039:8206" ph="INSERT IGNOR... group_link" />
-            <marker date="1512091508132" expanded="true" signature="8100:8145" ph="SELECT conta... contact" />
-            <marker date="1512091508132" expanded="true" signature="8149:8204" ph="SELECT group... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="6640:6674" ph="DELETE FROM " />
+            <marker date="1512171248215" expanded="true" signature="7342:7397" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="7784:7855" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="8345:8512" ph="INSERT IGNOR... group_link" />
+            <marker date="1512171248215" expanded="true" signature="8406:8451" ph="SELECT conta... contact" />
+            <marker date="1512171248215" expanded="true" signature="8455:8510" ph="SELECT group... contact_group" />
           </folding>
         </state>
       </provider>
@@ -859,19 +860,7 @@
         <state relative-caret-position="1155">
           <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
           <folding>
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
             <element signature="e#1451#1452#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -880,7 +869,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="22" column="51" lean-forward="false" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -890,15 +881,16 @@
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512091508132" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="3574:3718" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="3574:3733" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="6334:6368" ph="DELETE FROM " />
-            <marker date="1512091508132" expanded="true" signature="7036:7091" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512091508132" expanded="true" signature="7478:7549" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512091508132" expanded="true" signature="8039:8206" ph="INSERT IGNOR... group_link" />
-            <marker date="1512091508132" expanded="true" signature="8100:8145" ph="SELECT conta... contact" />
-            <marker date="1512091508132" expanded="true" signature="8149:8204" ph="SELECT group... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="6640:6674" ph="DELETE FROM " />
+            <marker date="1512171248215" expanded="true" signature="7342:7397" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="7784:7855" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="8345:8512" ph="INSERT IGNOR... group_link" />
+            <marker date="1512171248215" expanded="true" signature="8406:8451" ph="SELECT conta... contact" />
+            <marker date="1512171248215" expanded="true" signature="8455:8510" ph="SELECT group... contact_group" />
           </folding>
         </state>
       </provider>
@@ -908,19 +900,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
             <element signature="e#1451#1452#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -929,7 +909,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="22" column="51" lean-forward="false" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -938,19 +920,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
             <element signature="e#1451#1452#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -959,6 +929,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -967,19 +938,7 @@
         <state relative-caret-position="264">
           <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding>
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
             <element signature="e#1451#1452#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -989,6 +948,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -997,19 +957,7 @@
         <state relative-caret-position="264">
           <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding>
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
             <element signature="e#1451#1452#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1019,6 +967,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,18 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/9b20037b/8ee15633-2d7a-4aab-ae97-83e2e18cb196/heroku_b04a51fe881bd9d.contact_group">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/9b20037b/8ee15633-2d7a-4aab-ae97-83e2e18cb196/heroku_b04a51fe881bd9d.group_link">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1112,21 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="31" column="90" lean-forward="false" selection-start-line="31" selection-start-column="90" selection-end-line="31" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Contact_UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6864">
-          <caret line="208" column="40" lean-forward="false" selection-start-line="208" selection-start-column="40" selection-end-line="208" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/9b20037b/8ee15633-2d7a-4aab-ae97-83e2e18cb196/heroku_b04a51fe881bd9d.contact">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1136,24 +1058,57 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="36" column="155" lean-forward="false" selection-start-line="36" selection-start-column="155" selection-end-line="36" selection-end-column="155" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Contacts_DAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-708">
-          <caret line="150" column="37" lean-forward="false" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
+        <state relative-caret-position="4620">
+          <caret line="134" column="33" lean-forward="false" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512091508132" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="3574:3718" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="3574:3733" ph="SELECT c.*, contact" />
-            <marker date="1512091508132" expanded="true" signature="6334:6368" ph="DELETE FROM " />
-            <marker date="1512091508132" expanded="true" signature="7036:7091" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512091508132" expanded="true" signature="7478:7549" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512091508132" expanded="true" signature="8039:8206" ph="INSERT IGNOR... group_link" />
-            <marker date="1512091508132" expanded="true" signature="8100:8145" ph="SELECT conta... contact" />
-            <marker date="1512091508132" expanded="true" signature="8149:8204" ph="SELECT group... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
+            <marker date="1512171248215" expanded="true" signature="6640:6674" ph="DELETE FROM " />
+            <marker date="1512171248215" expanded="true" signature="7342:7397" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="7784:7855" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512171248215" expanded="true" signature="8345:8512" ph="INSERT IGNOR... group_link" />
+            <marker date="1512171248215" expanded="true" signature="8406:8451" ph="SELECT conta... contact" />
+            <marker date="1512171248215" expanded="true" signature="8455:8510" ph="SELECT group... contact_group" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9b20037b/8ee15633-2d7a-4aab-ae97-83e2e18cb196/heroku_b04a51fe881bd9d.contact_group">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Contact_UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="59" column="26" lean-forward="false" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -52,7 +52,7 @@ public class Contacts_DAO {
                             groups.add(group);
                         }
                     }
-                    if (allContacts.size() > 0) {
+                    if (new_contact != null) {
                         //Add last contact to list
                         new_contact.setGroups(groups);
                         allContacts.add(new_contact);
@@ -73,16 +73,16 @@ public class Contacts_DAO {
         }
     }
 
-    public static Contact getByName(String search_name) {
-        //Gets an individual contact by the name
+    public static ArrayList<Contact> searchByName(String search_name) {
+        //Gets a list of contacts searched by name within the contacts list
+        ArrayList<Contact> searchContacts = new ArrayList<>();
 
         MySQL db = new MySQL();
 
         //Connect to database and pull contacts list
         try (Connection c = db.connection()) {
-            try (PreparedStatement stmt = c.prepareStatement("SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id AND c.name = ?;")) {
-
-                stmt.setString(1, search_name);
+            try (PreparedStatement stmt = c.prepareStatement("SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id AND c.name LIKE ?;")) {
+                stmt.setString(1, search_name + "%");
 
                 //Process the results set
                 try (ResultSet r = stmt.executeQuery()) {
@@ -90,10 +90,15 @@ public class Contacts_DAO {
                     Contact new_contact = null;
                     ArrayList<String> groups = null;
                     while (r.next()) {
-                        //If name is not blank and the name is new, process a new contact. Otherwise, most the contact is a repeat entry resulting from the contact being in multiple groups, process groups into an arraylist
+                        //If name is not blank and the name is new, process a new contact. Otherwise, the contact is a repeat entry resulting from the contact being in multiple groups, process groups into an arraylist
                         if (prev_name.length() == 0 || !prev_name.equals(r.getString("name"))) {
 
                             //Check if contact was preceded by another, if so, add groups to contact and add contact to allContacts arraylist
+                            if (prev_name.length() != 0) {
+                                new_contact.setGroups(groups);
+                                searchContacts.add(new_contact);
+                            }
+
                             String name = r.getString("name");
                             String email = r.getString("email");
                             String phone_number = r.getString("phone_number");
@@ -115,7 +120,7 @@ public class Contacts_DAO {
                     if (new_contact != null) {
                         //Add last contact to list
                         new_contact.setGroups(groups);
-                        return new_contact;
+                        searchContacts.add(new_contact);
                     }
                 }
             }
@@ -125,18 +130,12 @@ public class Contacts_DAO {
             e.printStackTrace();
         }
 
-        //If no new contact returned, return null
-        return null;
-    }
-
-    public static Contact getByPhoneNumber(String phone_number) {
-        //TODO
-        return null;
-    }
-
-    public static Contact getByEmail(String email) {
-        //TODO
-        return null;
+        // Process results, if some contacts are available, return the results as an arraylist, otherwise, return null
+        if (searchContacts.size() > 0) {
+            return searchContacts;
+        } else {
+            return null;
+        }
     }
 
     public static String removeAContact(Contact contact) {

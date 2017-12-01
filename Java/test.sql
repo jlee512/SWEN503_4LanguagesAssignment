@@ -33,3 +33,5 @@ INSERT INTO Group_Link(contact_id, group_id) VALUES (1, 31), (11, 1) , (11, 11),
 
 # Test queries
 SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id;
+
+SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id AND c.name LIKE 'Julian%';
