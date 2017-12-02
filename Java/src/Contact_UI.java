@@ -246,7 +246,7 @@ public class Contact_UI {
                     System.out.println();
                 }
 
-                //Get phone number input
+                //Get groups input
                 while(!groups_finished) {
                     System.out.println("\t Current groups are: ");
                     System.out.print("\t\t");
@@ -256,8 +256,8 @@ public class Contact_UI {
                     System.out.println();
                     System.out.println();
 
-                    System.out.println("\t To add to these, press 1 and hit ENTER] \t");
-                    System.out.println("\t To reset to no groups, press 2 and hit ENTER] \t");
+                    System.out.println("\t To add to these, press 1 and hit ENTER \t");
+                    System.out.println("\t To start with no groups, press 2 and hit ENTER \t");
                     System.out.print("\t");
 
                     input = Keyboard.readInput();

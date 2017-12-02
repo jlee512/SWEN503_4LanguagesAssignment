@@ -55,7 +55,19 @@ namespace CSharp
                         break;
                     case 3:
                         //Update a contact
-
+                        string updatedContactName = UpdateAContact();
+                        if (updatedContactName != null)
+                        {
+                            Console.WriteLine("-------------------------------------------------");
+                            Console.WriteLine("Thanks, " + updatedContactName + " has been updated successfully");
+                            Console.WriteLine("-------------------------------------------------");
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sorry we weren't able to update your contact, please try again");
+                            Console.WriteLine();
+                        }
                         break;
                     case 4:
                         //Search for a contact
@@ -155,7 +167,7 @@ namespace CSharp
             Console.WriteLine("\t 4) Search your contacts list by name");
             Console.WriteLine("\t 5) View all contacts");
             Console.WriteLine("\t 6) Quit");
-            Console.WriteLine("\t 7) Please type the number of your selection and hit ENTER");
+            Console.WriteLine("\t Please type the number of your selection and hit ENTER");
             Console.WriteLine("\t");
 
             string input = Console.ReadLine();
@@ -294,7 +306,7 @@ namespace CSharp
                 }
             }
 
-            Contact contact = new Contact(name, phoneNumber, email);
+            Contact contact = new Contact(name, email, phoneNumber);
             contact.Groups = groups;
             bool addStatus = ContactsDAO.AddContact(contact);
 
@@ -307,6 +319,227 @@ namespace CSharp
                 return "";
             }
 
+        }
+
+        public static string UpdateAContact()
+        {
+
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("\t Update a contact");
+            Console.WriteLine("-------------------------------------------------");
+
+            List<Contact> contacts = PrintAllContacts();
+
+            Console.WriteLine("\t Please enter the number of the contact you would like to update and hit ENTER");
+            Console.WriteLine("\t");
+
+            string input = Console.ReadLine();
+
+            bool inputCheck = Int32.TryParse(input, out var selection);
+
+            if (inputCheck)
+            {
+                if (selection <= contacts.Count && selection > 0)
+                {
+                    Contact editContact = contacts[selection - 1];
+                    Console.WriteLine("\t Updating contact: " + editContact.Name);
+                    Console.WriteLine("\t");
+
+                    string name = "";
+                    bool nameCheck = false;
+                    string email;
+                    string phoneNumber;
+                    string groupToAdd = "";
+                    List<String> groups = new List<string>();
+
+                    bool groupsFinished = false;
+
+                    while (!nameCheck)
+                    {
+                        Console.WriteLine("\t Please enter a contact name and hit ENTER");
+                        Console.WriteLine("\t Just hit ENTER to leave name unchanged");
+                        Console.WriteLine("\t");
+
+                        name = Console.ReadLine();
+                        if (name.Length == 0 || name.Equals(editContact.Name))
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("\t\t Name will not be changed");
+                            Console.WriteLine();
+                            nameCheck = true;
+                            name = editContact.Name;
+                        }
+                        else
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("\t\t Name will be changed to: " + name);
+                            Console.WriteLine();
+                            nameCheck = true;
+                        }
+                    }
+
+                    Console.WriteLine("\t Please enter a contact email and hit ENTER");
+                    Console.WriteLine("\t [To leave unchanged, just hit ENTER]");
+                    Console.WriteLine("\t");
+
+                    email = Console.ReadLine();
+
+                    if (email.Length == 0)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("\t\t Email will not be changed");
+                        Console.WriteLine();
+                        email = editContact.Email;
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("\t\t Email will be changed to: " + email);
+                        Console.WriteLine();
+                    }
+
+                    Console.WriteLine("\t Please enter a contact phone number and hit ENTER");
+                    Console.WriteLine("\t [To leave unchanged, just hit ENTER]");
+                    Console.WriteLine("\t");
+
+                    phoneNumber = Console.ReadLine();
+
+                    if (phoneNumber.Length == 0)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("\t\t Phone number will not be changed");
+                        Console.WriteLine();
+                        phoneNumber = editContact.PhoneNumber;
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("\t\t Phone number will be changed to: " + phoneNumber);
+                        Console.WriteLine();
+                    }
+
+                    while (!groupsFinished)
+                    {
+                        Console.WriteLine("\t Current groups are: ");
+                        Console.Write("\t\t");
+
+                        for (int i = 0; i < editContact.Groups.Count; i++)
+                        {
+                            Console.Write("| " + editContact.Groups[i] + " |");
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+                        Console.WriteLine("\t To add to these, press 1 and hit ENTER");
+                        Console.WriteLine("\t To start with no groups, press 2 and hit ENTER");
+                        Console.WriteLine("\t");
+
+                        input = Console.ReadLine();
+
+                        bool inputCheckGroups = Int32.TryParse(input, out var selectionGroups);
+
+                        if (inputCheckGroups)
+                        {
+                            if (selectionGroups < 3 && selectionGroups > 0)
+                            {
+                                switch (selectionGroups)
+                                {
+                                    case 1:
+                                        groups = editContact.Groups;
+                                        while (!groupsFinished)
+                                        {
+                                            Console.WriteLine("\t Please enter a group name and hit ENTER");
+                                            Console.WriteLine("\t");
+
+                                            groupToAdd = Console.ReadLine();
+                                            if (groupToAdd.Length == 0)
+                                            {
+                                                Console.WriteLine("\t No group name entered, please try again");
+                                            }
+                                            else
+                                            {
+                                                groups.Add(groupToAdd);
+                                                Console.WriteLine("\t Group added sucessfully");
+                                                Console.WriteLine(
+                                                    "\t To add another group, type '1' and hit ENTER, otherwise hit ENTER");
+                                                Console.WriteLine("\t");
+
+                                                string addMore = Console.ReadLine();
+
+                                                if (addMore.Equals("1"))
+                                                {
+                                                    groupsFinished = false;
+                                                }
+                                                else
+                                                {
+                                                    groupsFinished = true;
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    case 2:
+                                        while (!groupsFinished)
+                                        {
+                                            Console.WriteLine("\t Please enter a group name and hit ENTER");
+                                            Console.WriteLine("\t");
+
+                                            groupToAdd = Console.ReadLine();
+                                            if (groupToAdd.Length == 0)
+                                            {
+                                                Console.WriteLine("\t No group name entered, please try again");
+                                            }
+                                            else
+                                            {
+                                                groups.Add(groupToAdd);
+                                                Console.WriteLine("\t Group added successfully");
+                                                Console.WriteLine(
+                                                    "\t To add another group, type '1' and hit ENTER, otherwise hit ENTER");
+                                                Console.WriteLine("\t");
+
+                                                string addMore = Console.ReadLine();
+
+                                                if (addMore.Equals("1"))
+                                                {
+                                                    groupsFinished = false;
+                                                }
+                                                else
+                                                {
+                                                    groupsFinished = true;
+                                                }
+                                            }
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("\t Invalid input, please select a menu item number. Please try again...");
+                        }
+                    }
+
+                    Contact contact = new Contact(name, email, phoneNumber);
+                    contact.Groups = groups;
+                    string editedContactName = ContactsDAO.UpdateAContact(contact, editContact.Name);
+
+                    if (editedContactName != null)
+                    {
+                        return editedContactName;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

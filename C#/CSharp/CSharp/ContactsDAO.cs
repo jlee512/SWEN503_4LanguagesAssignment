@@ -259,5 +259,111 @@ namespace CSharp
                 db.Close();
             }
         }
+
+        public static string UpdateAContact(Contact contact, string originalName)
+        {
+
+            MySqlDb db = new MySqlDb();
+
+            db.Connect();
+            MySqlCommand sqlCommand;
+
+            try
+            {
+
+                for (int i = 0; i < contact.Groups.Count; i++)
+                {
+
+                    sqlCommand = new MySqlCommand("INSERT IGNORE INTO contact_group(group_name) VALUES (@GROUPNAME);",
+                        db.Connection);
+                    sqlCommand.Parameters.Add("@GROUPNAME", MySqlDbType.String);
+                    sqlCommand.Parameters["@GROUPNAME"].Value = contact.Groups[i];
+
+                    try
+                    {
+                        var executeUpdate = sqlCommand.ExecuteNonQuery();
+                    }
+                    catch (InvalidOperationException e)
+                    {
+                        //String formatting difference
+                        Console.WriteLine("Groups");
+                        Console.WriteLine("Exception caught: {0}", e);
+                    }
+
+                }
+
+                sqlCommand =
+                    new MySqlCommand(
+                        "UPDATE contact SET name = @CONTACTNAME, email = @CONTACTEMAIL, phone_number = @CONTACTPHONE WHERE name = @ORIGINALNAME;",
+                        db.Connection);
+                sqlCommand.Parameters.Add("@CONTACTNAME", MySqlDbType.String);
+                sqlCommand.Parameters["@CONTACTNAME"].Value = contact.Name;
+                sqlCommand.Parameters.Add("@CONTACTEMAIL", MySqlDbType.String);
+                sqlCommand.Parameters["@CONTACTEMAIL"].Value = contact.Email;
+                sqlCommand.Parameters.Add("@CONTACTPHONE", MySqlDbType.String);
+                sqlCommand.Parameters["@CONTACTPHONE"].Value = contact.PhoneNumber;
+                sqlCommand.Parameters.Add("@ORIGINALNAME", MySqlDbType.String);
+                sqlCommand.Parameters["@ORIGINALNAME"].Value = originalName;
+
+                try
+                {
+                    var executeUpdate = sqlCommand.ExecuteNonQuery();
+                }
+                catch (InvalidOperationException e)
+                {
+                    //String formatting difference
+                    Console.WriteLine("Contact");
+                    Console.WriteLine("Exception caught: {0}", e);
+                }
+
+                sqlCommand =
+                    new MySqlCommand(
+                        "DELETE FROM group_link WHERE contact_id = (SELECT contact_id FROM contact WHERE name = @CONTACTNAME);",
+                        db.Connection);
+                sqlCommand.Parameters.Add("@CONTACTNAME", MySqlDbType.String);
+                sqlCommand.Parameters["@CONTACTNAME"].Value = originalName;
+
+                try
+                {
+                    var executeUpdate = sqlCommand.ExecuteNonQuery();
+                }
+                catch (InvalidOperationException e)
+                {
+                    //String formatting difference
+                    Console.WriteLine("Remove Contact Group Linkages");
+                    Console.WriteLine("Exception caught: {0}", e);
+                }
+
+                for (int i = 0; i < contact.Groups.Count; i++)
+                {
+                    sqlCommand = new MySqlCommand(
+                        "INSERT IGNORE INTO group_link(contact_id, group_id) VALUES ((SELECT contact_id FROM contact WHERE name = @CONTACTNAME), (SELECT group_id FROM contact_group WHERE group_name = @GROUPNAME));",
+                        db.Connection);
+                    sqlCommand.Parameters.Add("@CONTACTNAME", MySqlDbType.String);
+                    sqlCommand.Parameters["@CONTACTNAME"].Value = contact.Name;
+                    sqlCommand.Parameters.Add("@GROUPNAME", MySqlDbType.String);
+                    sqlCommand.Parameters["@GROUPNAME"].Value = contact.Groups[i];
+
+                    try
+                    {
+                        var executeUpdate = sqlCommand.ExecuteNonQuery();
+                    }
+                    catch (InvalidOperationException e)
+                    {
+                        //String formatting difference
+                        Console.WriteLine("Group linkages");
+                        Console.WriteLine("Exception caught: {0}", e);
+                    }
+                }
+                return contact.Name;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return null;
+
+        }
     }
 }
