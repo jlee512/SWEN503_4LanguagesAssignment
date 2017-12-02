@@ -91,7 +91,7 @@ namespace CSharp
                     "SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id AND c.name LIKE @SEARCH;",
                     db.Connection);
             sqlCommand.Parameters.Add("@SEARCH", MySqlDbType.String);
-            sqlCommand.Parameters["@SEARCH"].Value = searchName;
+            sqlCommand.Parameters["@SEARCH"].Value = searchName + "%";
 
             try
             {
@@ -192,7 +192,7 @@ namespace CSharp
             {
                 for (int i = 0; i < contact.Groups.Count; i++)
                 {
-                    sqlCommand = new MySqlCommand("INSERT IGNORE INTO contact_group(group_name) VALUES @GROUPNAME;",
+                    sqlCommand = new MySqlCommand("INSERT IGNORE INTO contact_group(group_name) VALUES (@GROUPNAME);",
                         db.Connection);
                     sqlCommand.Parameters.Add("@GROUPNAME", MySqlDbType.String);
                     sqlCommand.Parameters["@GROUPNAME"].Value = contact.Groups[i];

@@ -22,7 +22,19 @@ namespace CSharp
                 {
                     case 1:
                         //Add a contact
-
+                        string contactName = AddContactToList();
+                        if (contactName != null)
+                        {
+                            Console.WriteLine("-------------------------------------------------");
+                            Console.WriteLine("Thanks, " + contactName + " has been added successfully");
+                            Console.WriteLine("-------------------------------------------------");
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sorry we weren't able to add your contact to the list, please try again");
+                            Console.WriteLine();
+                        }
                         break;
                     case 2:
                         //Remove a contact
@@ -36,7 +48,8 @@ namespace CSharp
                         }
                         else
                         {
-                            Console.WriteLine("Sorry, we weren't able to remove your contact from the list, please try again");
+                            Console.WriteLine(
+                                "Sorry, we weren't able to remove your contact from the list, please try again");
                             Console.WriteLine();
                         }
                         break;
@@ -195,19 +208,105 @@ namespace CSharp
             Console.WriteLine("\t");
 
             string input = Console.ReadLine();
-            int selection;
 
-            bool inputCheck = Int32.TryParse(input, out selection);
+            bool inputCheck = Int32.TryParse(input, out var selection);
 
             if (inputCheck)
             {
-                if (selection < contacts.Count && selection > 0)
+                if (selection <= contacts.Count && selection > 0)
                 {
                     string removedName = ContactsDAO.RemoveAContact(contacts[selection - 1]);
                     return removedName;
                 }
             }
             return null;
+        }
+
+        public static string AddContactToList()
+        {
+            string name = "";
+            bool nameCheck = false;
+            string email;
+            string phoneNumber;
+            string groupToAdd = "";
+            List<String> groups = new List<String>();
+            bool groupsFinished = false;
+
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("\t Add a contact");
+            Console.WriteLine("-------------------------------------------------");
+
+            while (!nameCheck)
+            {
+                Console.WriteLine("\t Please enter a name and hit ENTER");
+
+                Console.WriteLine("\t");
+                name = Console.ReadLine();
+                if (name.Length == 0)
+                {
+                    Console.WriteLine("\t No contact name entered, please try again");
+                }
+                else
+                {
+                    nameCheck = true;
+                }
+            }
+
+            Console.WriteLine("\t Please enter a contact email and hit ENTER");
+            Console.WriteLine("\t [To leave email empty, just hit ENTER]");
+            Console.WriteLine("\t");
+
+            email = Console.ReadLine();
+
+            Console.WriteLine("\t Please enter a contact phone number and hit ENTER");
+            Console.WriteLine("\t [To leave phone number empty, just hit ENTER]");
+            Console.WriteLine("\t");
+
+            phoneNumber = Console.ReadLine();
+
+            while (!groupsFinished)
+            {
+                Console.WriteLine("\t Please enter a group name and hit ENTER");
+                Console.WriteLine("\t");
+
+                groupToAdd = Console.ReadLine();
+                if (groupToAdd.Length == 0)
+                {
+                    Console.WriteLine("\t No group name entered, please try again");
+                }
+                else
+                {
+                    groups.Add(groupToAdd);
+                    Console.WriteLine("\t Group added successfully");
+                    Console.WriteLine("\t To add another group, type '1' and hit ENTER, otherwise hit ENTER");
+                    Console.WriteLine("\t");
+
+                    string addMore = Console.ReadLine();
+
+                    if (addMore.Equals("1"))
+                    {
+                        groupsFinished = false;
+                    }
+                    else
+                    {
+                        groupsFinished = true;
+                    }
+                }
+            }
+
+            Contact contact = new Contact(name, phoneNumber, email);
+            contact.Groups = groups;
+            bool addStatus = ContactsDAO.AddContact(contact);
+
+            if (addStatus)
+            {
+                return name;
+            }
+            else
+            {
+                return "";
+            }
+
         }
     }
 }
