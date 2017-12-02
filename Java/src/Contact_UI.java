@@ -69,13 +69,14 @@ public class Contact_UI {
                     break;
                 case 6:
                     //Quit
+                    session = false;
                     System.out.println("Thanks for using the contacts viewer");
                     return;
                 case 7:
                     System.out.println("You have not entered a number corresponding to a menu item, please try again");
                     continue;
                 case 8:
-                    System.out.println("You have not entered a number within the list of menu items (1 to 5), please try again");
+                    System.out.println("You have not entered a number within the list of menu items (1 to 6), please try again");
                     continue;
             }
 
