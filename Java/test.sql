@@ -20,6 +20,7 @@ CREATE TABLE Group_Link (
   link_id INT PRIMARY KEY AUTO_INCREMENT,
   contact_id INT NOT NULL,
   group_id INT NOT NULL,
+  CONSTRAINT UC_contactAndGroup UNIQUE (contact_id, group_id),
   FOREIGN KEY (contact_id) REFERENCES Contact(contact_id) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (group_id) REFERENCES Contact_Group(group_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
@@ -35,3 +36,5 @@ INSERT INTO Group_Link(contact_id, group_id) VALUES (1, 31), (11, 1) , (11, 11),
 SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id;
 
 SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id AND c.name LIKE 'Julian%';
+
+UPDATE contact SET name = 'test', email = 'test' ,phone_number = 'test' WHERE name = 'Julian';

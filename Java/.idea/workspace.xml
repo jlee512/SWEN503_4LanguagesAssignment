@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2bdd8-a1bc-4907-862f-2d7e367f541f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8ee15633-2d7a-4aab-ae97-83e2e18cb196.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8ee15633-2d7a-4aab-ae97-83e2e18cb196.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Contact.java" afterPath="$PROJECT_DIR$/src/Contact.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Contact_UI.java" afterPath="$PROJECT_DIR$/src/Contact_UI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Contacts_DAO.java" afterPath="$PROJECT_DIR$/src/Contacts_DAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.sql" afterPath="$PROJECT_DIR$/test.sql" />
@@ -46,10 +48,6 @@
         <option name="myItemId" value="heroku_b04a51fe881bd9d" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="group_link" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
     <PATH>
       <PATH_ELEMENT>
@@ -91,11 +89,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="Contact_UI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Contact_UI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Contact_UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="59" column="26" lean-forward="false" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+            <state relative-caret-position="4950">
+              <caret line="265" column="61" lean-forward="true" selection-start-line="265" selection-start-column="61" selection-end-line="265" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,12 +101,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.sql">
+      <file leaf-file-name="Contacts_DAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Contacts_DAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="838">
-              <caret line="36" column="155" lean-forward="false" selection-start-line="36" selection-start-column="155" selection-end-line="36" selection-end-column="155" />
-              <folding />
+            <state relative-caret-position="5478">
+              <caret line="190" column="51" lean-forward="false" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1512178055299" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
+                <marker date="1512178055299" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
+                <marker date="1512178055299" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
+                <marker date="1512178055299" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
+                <marker date="1512178055299" expanded="true" signature="6640:6674" ph="DELETE FROM " />
+                <marker date="1512178055299" expanded="true" signature="7365:7420" ph="INSERT IGNOR... contact_group" />
+                <marker date="1512178055299" expanded="true" signature="7807:7878" ph="UPDATE conta... " />
+                <marker date="1512178055299" expanded="true" signature="8221:8310" ph="DELETE FROM " />
+                <marker date="1512178055299" expanded="true" signature="8264:8309" ph="SELECT conta... contact" />
+                <marker date="1512178055299" expanded="true" signature="8683:8850" ph="INSERT IGNOR... group_link" />
+                <marker date="1512178055299" expanded="true" signature="8744:8789" ph="SELECT conta... contact" />
+                <marker date="1512178055299" expanded="true" signature="8793:8848" ph="SELECT group... contact_group" />
+                <marker date="1512178055299" expanded="true" signature="9637:9692" ph="INSERT IGNOR... contact_group" />
+                <marker date="1512178055299" expanded="true" signature="10079:10150" ph="INSERT IGNOR... contact_group" />
+                <marker date="1512178055299" expanded="true" signature="10640:10807" ph="INSERT IGNOR... group_link" />
+                <marker date="1512178055299" expanded="true" signature="10701:10746" ph="SELECT conta... contact" />
+                <marker date="1512178055299" expanded="true" signature="10750:10805" ph="SELECT group... contact_group" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,12 +165,12 @@
         <option value="$PROJECT_DIR$/src/MySQL.java" />
         <option value="$PROJECT_DIR$/src/DBConfiguration.java" />
         <option value="$PROJECT_DIR$/src/AbstractDB.java" />
-        <option value="$PROJECT_DIR$/src/Contact.java" />
         <option value="$PROJECT_DIR$/src/Keyboard.java" />
         <option value="$PROJECT_DIR$/src/InvalidInputException.java" />
+        <option value="$PROJECT_DIR$/src/Contact_UI.java" />
         <option value="$PROJECT_DIR$/test.sql" />
         <option value="$PROJECT_DIR$/src/Contacts_DAO.java" />
-        <option value="$PROJECT_DIR$/src/Contact_UI.java" />
+        <option value="$PROJECT_DIR$/src/Contact.java" />
       </list>
     </option>
   </component>
@@ -692,7 +709,7 @@
       <workItem from="1512008622768" duration="6501000" />
       <workItem from="1512031666725" duration="79000" />
       <workItem from="1512070384942" duration="15438000" />
-      <workItem from="1512167858354" duration="3420000" />
+      <workItem from="1512167858354" duration="9068000" />
     </task>
     <task id="LOCAL-00001" summary="Fleshing out method stubs and object oriented design">
       <created>1512010914416</created>
@@ -722,11 +739,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512167998689</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Search functionality added">
+      <created>1512171576446</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1512171576446</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28699000" />
+    <option name="totallyTimeSpent" value="34347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -751,7 +775,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33866194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33866194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13907968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -812,7 +836,8 @@
     <MESSAGE value="Fleshing out method stubs and object oriented design - trying to start initial contact viewer design in Java. Plan is to progress to C# and then look into Python followed by a more complex language such as Haskell or Bash" />
     <MESSAGE value="Now able to display all contacts and welcome screen. Next step is developing ContactDAO methods to facilitate core features" />
     <MESSAGE value="Can add/remove contacts. Last implementations required for searching and updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="Can add/remove contacts. Last implementations required for searching and updating" />
+    <MESSAGE value="Search functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search functionality added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,16 +866,23 @@
           <caret line="150" column="37" lean-forward="false" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512171248215" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="6640:6674" ph="DELETE FROM " />
-            <marker date="1512171248215" expanded="true" signature="7342:7397" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512171248215" expanded="true" signature="7784:7855" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512171248215" expanded="true" signature="8345:8512" ph="INSERT IGNOR... group_link" />
-            <marker date="1512171248215" expanded="true" signature="8406:8451" ph="SELECT conta... contact" />
-            <marker date="1512171248215" expanded="true" signature="8455:8510" ph="SELECT group... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="6640:6674" ph="DELETE FROM " />
+            <marker date="1512178055299" expanded="true" signature="7365:7420" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="7807:7878" ph="UPDATE conta... " />
+            <marker date="1512178055299" expanded="true" signature="8221:8310" ph="DELETE FROM " />
+            <marker date="1512178055299" expanded="true" signature="8264:8309" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="8683:8850" ph="INSERT IGNOR... group_link" />
+            <marker date="1512178055299" expanded="true" signature="8744:8789" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="8793:8848" ph="SELECT group... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="9637:9692" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="10079:10150" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="10640:10807" ph="INSERT IGNOR... group_link" />
+            <marker date="1512178055299" expanded="true" signature="10701:10746" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="10750:10805" ph="SELECT group... contact_group" />
           </folding>
         </state>
       </provider>
@@ -881,16 +913,23 @@
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512171248215" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="6640:6674" ph="DELETE FROM " />
-            <marker date="1512171248215" expanded="true" signature="7342:7397" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512171248215" expanded="true" signature="7784:7855" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512171248215" expanded="true" signature="8345:8512" ph="INSERT IGNOR... group_link" />
-            <marker date="1512171248215" expanded="true" signature="8406:8451" ph="SELECT conta... contact" />
-            <marker date="1512171248215" expanded="true" signature="8455:8510" ph="SELECT group... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="6640:6674" ph="DELETE FROM " />
+            <marker date="1512178055299" expanded="true" signature="7365:7420" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="7807:7878" ph="UPDATE conta... " />
+            <marker date="1512178055299" expanded="true" signature="8221:8310" ph="DELETE FROM " />
+            <marker date="1512178055299" expanded="true" signature="8264:8309" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="8683:8850" ph="INSERT IGNOR... group_link" />
+            <marker date="1512178055299" expanded="true" signature="8744:8789" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="8793:8848" ph="SELECT group... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="9637:9692" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="10079:10150" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="10640:10807" ph="INSERT IGNOR... group_link" />
+            <marker date="1512178055299" expanded="true" signature="10701:10746" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="10750:10805" ph="SELECT group... contact_group" />
           </folding>
         </state>
       </provider>
@@ -1008,23 +1047,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Contact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1617">
-          <caret line="57" column="38" lean-forward="false" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
-          <folding>
-            <element signature="e#1451#1452#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/InvalidInputException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
-            <element signature="e#148#149#0" expanded="true" />
-            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="false" />
+            <element signature="e#178#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1041,10 +1070,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+    <entry file="dbDummy://dbtable:/9b20037b/8ee15633-2d7a-4aab-ae97-83e2e18cb196/heroku_b04a51fe881bd9d.contact_group">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1064,51 +1098,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="36" column="155" lean-forward="false" selection-start-line="36" selection-start-column="155" selection-end-line="36" selection-end-column="155" />
+        <state relative-caret-position="523">
+          <caret line="30" column="22" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="32" selection-end-column="90" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Contacts_DAO.java">
+    <entry file="file://$PROJECT_DIR$/src/AbstractDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4620">
-          <caret line="134" column="33" lean-forward="false" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1512171248215" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
-            <marker date="1512171248215" expanded="true" signature="6640:6674" ph="DELETE FROM " />
-            <marker date="1512171248215" expanded="true" signature="7342:7397" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512171248215" expanded="true" signature="7784:7855" ph="INSERT IGNOR... contact_group" />
-            <marker date="1512171248215" expanded="true" signature="8345:8512" ph="INSERT IGNOR... group_link" />
-            <marker date="1512171248215" expanded="true" signature="8406:8451" ph="SELECT conta... contact" />
-            <marker date="1512171248215" expanded="true" signature="8455:8510" ph="SELECT group... contact_group" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/9b20037b/8ee15633-2d7a-4aab-ae97-83e2e18cb196/heroku_b04a51fe881bd9d.contact_group">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="713">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Contact_UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="59" column="26" lean-forward="false" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+        <state relative-caret-position="4950">
+          <caret line="265" column="61" lean-forward="true" selection-start-line="265" selection-start-column="61" selection-end-line="265" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Contact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="12" column="65" lean-forward="false" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+          <folding>
+            <element signature="e#1419#1420#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Contacts_DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5478">
+          <caret line="190" column="51" lean-forward="false" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1512178055299" expanded="true" signature="585:729" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3819" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3831" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="3675:3837" ph="SELECT c.*, contact" />
+            <marker date="1512178055299" expanded="true" signature="6640:6674" ph="DELETE FROM " />
+            <marker date="1512178055299" expanded="true" signature="7365:7420" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="7807:7878" ph="UPDATE conta... " />
+            <marker date="1512178055299" expanded="true" signature="8221:8310" ph="DELETE FROM " />
+            <marker date="1512178055299" expanded="true" signature="8264:8309" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="8683:8850" ph="INSERT IGNOR... group_link" />
+            <marker date="1512178055299" expanded="true" signature="8744:8789" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="8793:8848" ph="SELECT group... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="9637:9692" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="10079:10150" ph="INSERT IGNOR... contact_group" />
+            <marker date="1512178055299" expanded="true" signature="10640:10807" ph="INSERT IGNOR... group_link" />
+            <marker date="1512178055299" expanded="true" signature="10701:10746" ph="SELECT conta... contact" />
+            <marker date="1512178055299" expanded="true" signature="10750:10805" ph="SELECT group... contact_group" />
           </folding>
         </state>
       </provider>

@@ -10,7 +10,7 @@ public class Contact {
     private String email;
     private ArrayList<String> groups;
 
-    public Contact(String name, String phone_number, String email) {
+    public Contact(String name, String email, String phone_number) {
         this.name = name;
         this.phone_number = phone_number;
         this.email = email;

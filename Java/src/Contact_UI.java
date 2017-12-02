@@ -48,7 +48,16 @@ public class Contact_UI {
                     break;
                 case 3:
                     // Update a contact
-
+                    String updatedContactName = updateAContact();
+                    if (updatedContactName != null) {
+                        System.out.println("--------------------------------------------------");
+                        System.out.println("Thanks, " + updatedContactName + " has been updated successfully");
+                        System.out.println("--------------------------------------------------");
+                        System.out.println();
+                    } else {
+                        System.out.println("Sorry we weren't able to update your contact, please try again");
+                        System.out.println();
+                    }
                     break;
                 case 4:
                     // Search for a contact
@@ -150,6 +159,193 @@ public class Contact_UI {
         } catch (NumberFormatException e) {
             return 7;
         }
+    }
+
+    public static String updateAContact() {
+
+        System.out.println("-------------------------------------------");
+        System.out.println("\t Update a contact \t");
+        System.out.println("-------------------------------------------");
+
+        ArrayList<Contact> contacts = printAllContacts();
+
+        System.out.println("\t Please enter the number of the contact you would like to update and hit ENTER \t");
+        System.out.print("\t");
+
+        String input = Keyboard.readInput();
+        int selection;
+
+        try {
+            selection = Integer.parseInt(input);
+            if (selection <= contacts.size() && selection > 0) {
+                Contact editContact = contacts.get(selection - 1);
+                System.out.println("\t Updating contact: " + editContact.getName());
+                System.out.println("\t ");
+
+                String name = "";
+                boolean name_check = false;
+                String email;
+                String phone_number;
+                String group_to_add = "";
+                ArrayList<String> groups = new ArrayList<>();
+                boolean groups_finished = false;
+
+                //Get name input
+                while (!name_check) {
+                    System.out.println("\t Please enter a contact name and hit ENTER \t");
+                    System.out.println("\t Just hit ENTER to leave name unchanged \t");
+                    System.out.print("\t");
+                    name = Keyboard.readInput();
+                    if (name.length() == 0) {
+                        System.out.println();
+                        System.out.println("\t\t Name will not be changed");
+                        System.out.println();
+                        name_check = true;
+                        name = editContact.getName();
+
+                    } else {
+                        System.out.println();
+                        System.out.println("\t\t Name will be changed to: " + name);
+                        System.out.println();
+                        name_check = true;
+                    }
+                }
+
+                //Get email input
+                System.out.println("\t Please enter a contact email and hit ENTER \t");
+                System.out.println("\t [To leave unchanged, just hit ENTER] \t");
+                System.out.print("\t");
+                email = Keyboard.readInput();
+
+                if (email.length() == 0) {
+                    System.out.println();
+                    System.out.println("\t\t Email will not be changed");
+                    System.out.println();
+                    email = editContact.getEmail();
+                } else {
+                    System.out.println();
+                    System.out.println("\t\t Email will be changed to: " + email);
+                    System.out.println();
+                }
+
+                //Get phone number input
+                System.out.println("\t Please enter a contact phone_number and hit ENTER \t");
+                System.out.println("\t [To leave unchanged, just hit ENTER] \t");
+                System.out.print("\t");
+                phone_number = Keyboard.readInput();
+
+                if (phone_number.length() == 0) {
+                    System.out.println();
+                    System.out.println("\t\t Phone number will not be changed");
+                    System.out.println();
+                    phone_number = editContact.getPhone_number();
+                } else {
+                    System.out.println();
+                    System.out.println("\t\t Phone number will be changed to: " + phone_number);
+                    System.out.println();
+                }
+
+                //Get phone number input
+                while(!groups_finished) {
+                    System.out.println("\t Current groups are: ");
+                    System.out.print("\t\t");
+                    for (int i = 0; i < editContact.getGroups().size(); i++) {
+                        System.out.print("| " + editContact.getGroups().get(i) + " |");
+                    }
+                    System.out.println();
+                    System.out.println();
+
+                    System.out.println("\t To add to these, press 1 and hit ENTER] \t");
+                    System.out.println("\t To reset to no groups, press 2 and hit ENTER] \t");
+                    System.out.print("\t");
+
+                    input = Keyboard.readInput();
+
+                    try {
+                        selection = Integer.parseInt(input);
+                        if (selection < 3 && selection > 0) {
+                            switch (selection) {
+                                case 1:
+                                    groups = editContact.getGroups();
+                                    //Get groups input
+                                    while (!groups_finished) {
+                                        System.out.println("\t Please enter a group name and hit ENTER \t");
+                                        try {
+                                            System.out.print("\t");
+                                            group_to_add = Keyboard.readInput();
+                                            if (group_to_add.length() == 0) {
+                                                throw new InvalidInputException("name length is zero");
+                                            } else {
+                                                groups.add(group_to_add);
+                                                System.out.println("\t Group added successfully \t");
+                                                System.out.println("\t To add another group, type '1' and hit ENTER, otherwise hit ENTER");
+                                                System.out.print("\t");
+                                                String add_more = Keyboard.readInput();
+
+                                                if (add_more.equals("1")) {
+                                                    groups_finished = false;
+                                                } else {
+                                                    groups_finished = true;
+                                                }
+                                            }
+                                        } catch (InvalidInputException e) {
+                                            System.out.println("\t No group name entered, please try again \t");
+                                        }
+                                    }
+                                    break;
+                                case 2:
+                                    //Get groups input
+                                    while (!groups_finished) {
+                                        System.out.println("\t Please enter a group name and hit ENTER \t");
+                                        try {
+                                            System.out.print("\t");
+                                            group_to_add = Keyboard.readInput();
+                                            if (group_to_add.length() == 0) {
+                                                throw new InvalidInputException("name length is zero");
+                                            } else {
+                                                groups.add(group_to_add);
+                                                System.out.println("\t Group added successfully \t");
+                                                System.out.println("\t To add another group, type '1' and hit ENTER, otherwise hit ENTER");
+                                                System.out.print("\t");
+                                                String add_more = Keyboard.readInput();
+
+                                                if (add_more.equals("1")) {
+                                                    groups_finished = false;
+                                                } else {
+                                                    groups_finished = true;
+                                                }
+                                            }
+                                        } catch (InvalidInputException e) {
+                                            System.out.println("\t No group name entered, please try again \t");
+                                        }
+                                    }
+                                    break;
+                            }
+
+                        } else {
+                            System.out.println("\t Invalid number entered, please try again...");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("\t Invalid input, please select a menu item number. Please try again...");
+                    }
+                }
+
+                Contact contact = new Contact(name, phone_number, email);
+                contact.setGroups(groups);
+                String editedContactName = Contacts_DAO.updateAContact(contact, editContact.getName());
+
+                if (editedContactName != null) {
+                    return editedContactName;
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        } catch (NumberFormatException e) {
+            return null;
+        }
+
     }
 
     public static boolean searchAContactByName() {

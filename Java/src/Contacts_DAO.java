@@ -161,6 +161,59 @@ public class Contacts_DAO {
         return "";
     }
 
+    public static String updateAContact(Contact contact, String originalName) {
+
+        MySQL db = new MySQL();
+
+        try (Connection c = db.connection()) {
+            for (int i = 0; i < contact.getGroups().size(); i++) {
+                //Add any new groups to the group table
+                try (PreparedStatement stmt = c.prepareStatement("INSERT IGNORE INTO contact_group(group_name) VALUES (?);")) {
+
+                    stmt.setString(1, contact.getGroups().get(i));
+                    stmt.executeUpdate();
+                }
+            }
+
+            //Insert contact into contact table
+            //NOTE: this feature will prevent duplicate contacts from being added. This would need to be fixed at a later date
+            try (PreparedStatement stmt = c.prepareStatement("UPDATE contact SET name = ?, email = ? ,phone_number = ? WHERE name = ?;")) {
+
+                stmt.setString(1, contact.getName());
+                stmt.setString(2, contact.getEmail());
+                stmt.setString(3, contact.getPhone_number());
+                stmt.setString(4, originalName);
+                stmt.executeUpdate();
+            }
+
+            try (PreparedStatement stmt = c.prepareStatement("DELETE FROM group_link WHERE contact_id = (SELECT contact_id FROM contact WHERE name = ?);")) {
+
+                stmt.setString(1, contact.getName());
+                stmt.executeUpdate();
+            }
+
+            //Insert contact id and group id's into group_link table
+            for (int i = 0; i < contact.getGroups().size(); i++) {
+                //Add any new groups to the group table
+                try (PreparedStatement stmt = c.prepareStatement("INSERT IGNORE INTO group_link(contact_id, group_id) VALUES ((SELECT contact_id FROM contact WHERE name = ?), (SELECT group_id FROM contact_group WHERE group_name = ?));")) {
+
+                    stmt.setString(1, contact.getName());
+                    stmt.setString(2, contact.getGroups().get(i));
+                    stmt.executeUpdate();
+                }
+            }
+
+            return contact.getName();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static boolean addContact(Contact contact) {
 
         MySQL db = new MySQL();

@@ -72,18 +72,25 @@
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="20" parent="6" name="contact_id">
-      <ColNames>contact_id</ColNames>
-    </index>
-    <index id="21" parent="6" name="group_id">
+    <index id="20" parent="6" name="group_id">
       <ColNames>group_id</ColNames>
+    </index>
+    <index id="21" parent="6" name="UC_contactAndGroup">
+      <ColNames>contact_id
+group_id</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="22" parent="6" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>link_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="23" parent="6" name="group_link_ibfk_1">
+    <key id="23" parent="6" name="UC_contactAndGroup">
+      <ColNames>contact_id
+group_id</ColNames>
+      <UnderlyingIndexName>UC_contactAndGroup</UnderlyingIndexName>
+    </key>
+    <foreign-key id="24" parent="6" name="group_link_ibfk_1">
       <ColNames>contact_id</ColNames>
       <RefSchemaName>heroku_b04a51fe881bd9d</RefSchemaName>
       <RefTableName>contact</RefTableName>
@@ -91,7 +98,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="24" parent="6" name="group_link_ibfk_2">
+    <foreign-key id="25" parent="6" name="group_link_ibfk_2">
       <ColNames>group_id</ColNames>
       <RefSchemaName>heroku_b04a51fe881bd9d</RefSchemaName>
       <RefTableName>contact_group</RefTableName>
