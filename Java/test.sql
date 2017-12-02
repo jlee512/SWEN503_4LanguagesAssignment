@@ -38,3 +38,5 @@ SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl
 SELECT c.*, g.group_name FROM contact AS c, contact_group AS g, group_link AS gl WHERE c.contact_id = gl.contact_id AND g.group_id = gl.group_id AND c.name LIKE 'Julian%';
 
 UPDATE contact SET name = 'test', email = 'test' ,phone_number = 'test' WHERE name = 'Julian';
+
+SELECT * FROM Contact;
