@@ -10,7 +10,7 @@ namespace CSharp
         public string Name { get; set;  }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public List<string> groups { get; set; }
+        public List<string> Groups { get; set; }
 
         public Contact(string name, string email, string phoneNumber)
         {
@@ -25,26 +25,26 @@ namespace CSharp
             Console.WriteLine("\t Phone: " + PhoneNumber);
             Console.WriteLine("\t Email: " + Email);
 
-            if (groups != null)
+            if (Groups != null)
             {
                 Console.Write("\t Groups: ");
-                if (groups.Count > 1)
+                if (Groups.Count > 1)
                 {
-                    for (int i = 0; i < groups.Count; i++)
+                    for (int i = 0; i < Groups.Count; i++)
                     {
-                        if (i == (groups.Count - 1))
+                        if (i == (Groups.Count - 1))
                         {
-                            Console.WriteLine(groups[i]);
+                            Console.WriteLine(Groups[i]);
                         }
                         else
                         {
-                            Console.Write(groups[i] + ", ");
+                            Console.Write(Groups[i] + ", ");
                         }
                     }
                 }
                 else
                 {
-                    Console.WriteLine(groups[0]);
+                    Console.WriteLine(Groups[0]);
                 }
             }
             Console.WriteLine();
