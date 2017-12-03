@@ -321,7 +321,7 @@ namespace CSharp
                         "DELETE FROM group_link WHERE contact_id = (SELECT contact_id FROM contact WHERE name = @CONTACTNAME);",
                         db.Connection);
                 sqlCommand.Parameters.Add("@CONTACTNAME", MySqlDbType.String);
-                sqlCommand.Parameters["@CONTACTNAME"].Value = originalName;
+                sqlCommand.Parameters["@CONTACTNAME"].Value = contact.Name;
 
                 try
                 {
