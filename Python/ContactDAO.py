@@ -13,7 +13,7 @@ class ContactDAO(object):
         result = db.insert("INSERT IGNORE INTO contact(name, email, phone_number) VALUES (%s, %s , %s);", [contact.get_name(), contact.get_email(), contact.get_phone_number()])
 
         for group in contact.get_groups():
-            result = db.insert("INSERT IGNORE INTO group_link(contact_id, group_id) VALUES ((SELECT contact_id FROM contact WHERE name = %s), (SELECT group_id FROM contact_group WHERE group_name = %s));", [contact.get_name, group])
+            result = db.insert("INSERT IGNORE INTO group_link(contact_id, group_id) VALUES ((SELECT contact_id FROM contact WHERE name = %s), (SELECT group_id FROM contact_group WHERE group_name = %s));", [contact.get_name(), group])
 
         db.close_connection()
 
@@ -27,7 +27,7 @@ class ContactDAO(object):
         db.close_connection()
 
         if result:
-            return contact.get_name
+            return contact.get_name()
         else:
             return ""
 

@@ -15,10 +15,25 @@ def main(args):
 
         if selection == 1:
             # Add contact to list
-            print("add")
+            contact_name = add_contact_to_list()
+            if contact_name is not None:
+                print("-------------------------------------------")
+                print("Thanks " + contact_name + " has been added successfully")
+                print("-------------------------------------------")
+                print()
+            else:
+                print("Sorry, we weren't able to add your contact to the list, please try again")
+                print()
         elif selection == 2:
             # Remove a contact
-            print("remove")
+            removed_contact_name = remove_a_contact()
+            if removed_contact_name is not None:
+                print("-------------------------------------------")
+                print("Thanks, " + removed_contact_name + " has been removed")
+                print("-------------------------------------------")
+            else:
+                print("Sorry we weren't able to remove your contact from the list, please try again")
+                print()
         elif selection == 3:
             # Update a contact
             print("update")
@@ -176,6 +191,27 @@ def add_contact_to_list():
     else:
         return ""
 
+def remove_a_contact():
+    print("-------------------------------------------")
+    print("\t Remove a contact")
+    print("-------------------------------------------")
+
+    contacts = print_all_contacts()
+
+    print("\t Please enter the number of the contact you would like to remove and hit ENTER")
+    print("\t", end="")
+
+    input_string = input('')
+
+    try:
+        selection = int(input_string)
+        if selection <= len(contacts) and selection > 0:
+            removed_name = ContactDAO.remove_a_contact(contacts[selection - 1])
+            return removed_name
+        else:
+            return None
+    except:
+        return None
 
 if __name__ == '__main__':
     main(sys.argv)
