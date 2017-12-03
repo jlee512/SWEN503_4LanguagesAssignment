@@ -197,7 +197,7 @@ public class Contact_UI {
                     System.out.println("\t Just hit ENTER to leave name unchanged \t");
                     System.out.print("\t");
                     name = Keyboard.readInput();
-                    if (name.length() == 0) {
+                    if (name.length() == 0 || name.equals(editContact.getName())) {
                         System.out.println();
                         System.out.println("\t\t Name will not be changed");
                         System.out.println();
@@ -331,7 +331,7 @@ public class Contact_UI {
                     }
                 }
 
-                Contact contact = new Contact(name, phone_number, email);
+                Contact contact = new Contact(name, email, phone_number);
                 contact.setGroups(groups);
                 String editedContactName = Contacts_DAO.updateAContact(contact, editContact.getName());
 

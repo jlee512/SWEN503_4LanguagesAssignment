@@ -4,6 +4,25 @@ from Contact import Contact
 class ContactDAO(object):
 
     @staticmethod
+    def update_a_contact(contact, original_name):
+        db = MySqlDb()
+
+        for group in contact.get_groups():
+            result = db.insert("INSERT IGNORE INTO contact_group(group_name) VALUES (%s);", [group])
+
+        result = db.insert("UPDATE contact SET name = %s, email = %s ,phone_number = %s WHERE name = %s;",
+                           [contact.get_name(), contact.get_email(), contact.get_phone_number(), original_name])
+
+        result = db.insert("DELETE FROM group_link WHERE contact_id = (SELECT contact_id FROM contact WHERE name = %s);", [contact.get_name()])
+
+        for group in contact.get_groups():
+            result = db.insert("INSERT IGNORE INTO group_link(contact_id, group_id) VALUES ((SELECT contact_id FROM contact WHERE name = %s), (SELECT group_id FROM contact_group WHERE group_name = %s));", [contact.get_name(), group])
+
+        db.close_connection()
+
+        return contact.get_name()
+
+    @staticmethod
     def add_a_contact(contact):
         db = MySqlDb()
 
