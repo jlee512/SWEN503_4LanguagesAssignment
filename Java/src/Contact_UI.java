@@ -464,7 +464,7 @@ public class Contact_UI {
             }
         }
 
-        Contact contact = new Contact(name, phone_number, email);
+        Contact contact = new Contact(name, email, phone_number);
         contact.setGroups(groups);
         boolean add_status = Contacts_DAO.addContact(contact);
 

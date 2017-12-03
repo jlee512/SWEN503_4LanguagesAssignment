@@ -10,15 +10,71 @@ def main(args):
     session = True
     initial_screen()
 
+    while session:
+        selection = top_menu_selection()
+
+        if selection == 1:
+            # Add contact to list
+            print("add")
+        elif selection == 2:
+            # Remove a contact
+            print("remove")
+        elif selection == 3:
+            # Update a contact
+            print("update")
+        elif selection == 4:
+            # Search for a contact
+            search_contact_by_name()
+        elif selection == 5:
+            # print all contacts
+            print_all_contacts()
+        elif selection == 6:
+            # Quit
+            session = False
+            print("Thanks for using the contacts viewer")
+            return
+        elif selection == 7:
+            print("You have not entered a number corresponding to a menu item, please try again")
+            continue
+        elif selection == 8:
+            print("You have not entered a number within the list of menu items (1 to 6), please try again")
+            continue
+
 def initial_screen():
     print("*******************************************")
     print("\tWelcome to your contacts viewer")
     print("*******************************************")
     print_all_contacts()
 
+def top_menu_selection():
+    selection = -1
+
+    print("-------------------------------------------")
+    print("\t What would you like to do?")
+    print("-------------------------------------------")
+
+    print("\t 1) Add a new contact")
+    print("\t 2) Delete a contact")
+    print("\t 3) Update a contact")
+    print("\t 4) Search your contacts list by name")
+    print("\t 5) View all contacts")
+    print("\t 6) Quit")
+    print("\t Please type the number of your selection and hit ENTER")
+    print("\t", end="")
+
+    input_string = input('')
+
+    try:
+        selection = int(input_string)
+        if selection < 7 and selection > 0:
+            return selection
+        else:
+            return 8
+    except:
+        return 7
 
 def print_all_contacts():
-    contacts_in_focus = ContactDAO.getAll()
+    contacts_in_focus = ContactDAO.get_all()
 
     if contacts_in_focus is not None:
         print("Contacts: ")
@@ -30,6 +86,95 @@ def print_all_contacts():
         print("Looks like you haven't added any contacts yet...")
 
     return contacts_in_focus
+
+def search_contact_by_name():
+    print("-------------------------------------------")
+    print("\t Search for a contact by name")
+    print("-------------------------------------------")
+
+    print("\t Please enter the name of the contact you would like to search for and hit ENTER")
+    print("\t", end="")
+
+    input_string = input("")
+
+    search_results = print_search_results(input_string)
+
+def print_search_results(input):
+    searchedContacts = ContactDAO.search_by_name(input)
+
+    if searchedContacts is not None:
+        print("Contacts: ")
+        print("----------")
+
+        for index, contact in enumerate(searchedContacts):
+            print("" + str(index + 1) + ") ", end="")
+            contact.print_to_console()
+    else:
+        print("Sorry we couldn't find any contacts with that name")
+        print("Please try different spelling or view all contacts at the main menu")
+
+    return searchedContacts
+
+def add_contact_to_list():
+
+    name = ""
+    name_check = False
+    email = None
+    phone_number = None
+    group_to_add = ""
+    groups = []
+    groups_finished = False
+
+    print("-------------------------------------------")
+    print("\t Add a contact")
+    print("-------------------------------------------")
+
+    while not name_check:
+        print("\t Please enter a contact name and hit ENTER")
+        print("\t", end="")
+        name = input('')
+
+        if len(name) == 0:
+            print("\t No contact name entered, please try again")
+        else:
+            name_check = True
+
+    print("\t Please enter a contact email and hit ENTER")
+    print("\t [To leave email empty, just hit ENTER]")
+    print("\t", end="")
+    email = input('')
+
+    print("\t Please enter a contact phone number and hit ENTER")
+    print("\t", end="")
+    phone_number = input('')
+
+    while not groups_finished:
+        print("\t Please enter a group name and hit ENTER")
+        print("\t", end="")
+        group_to_add = input('')
+
+        if len(group_to_add) == 0:
+            print("\t No group name entered, please try again")
+        else:
+            groups.append(group_to_add)
+            print("\t Group added successfully")
+            print("\t To add another group, type '1' and hit ENTER, otherwise hit ENTER")
+            print("\t", end="")
+
+            add_more = input('')
+            if add_more == "1":
+                groups_finished = False
+            else:
+                groups_finished = True
+
+    contact = Contact(name, email, phone_number)
+    contact.set_groups(groups)
+    add_status = ContactDAO.add_a_contact(contact)
+
+    if add_status:
+        return name
+    else:
+        return ""
 
 
 if __name__ == '__main__':
